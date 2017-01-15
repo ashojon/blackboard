@@ -43,7 +43,8 @@
 	<bean id="deleteLayerCommand" class="org.pmedv.blackboard.commands.DeleteLayerCommand"/>
 	<bean id="moveToLayerCommand" class="org.pmedv.blackboard.commands.MoveToLayerCommand"/>
 	<bean id="moveLayerUpCommand" class="org.pmedv.blackboard.commands.MoveLayerUpCommand"/>
-	<bean id="moveLayerDownCommand" class="org.pmedv.blackboard.commands.MoveLayerDownCommand"/>	
+	<bean id="moveLayerDownCommand" class="org.pmedv.blackboard.commands.MoveLayerDownCommand"/>
+	<bean id="SelectAllLayersCommand" class="org.pmedv.blackboard.commands.SelectAllLayersCommand"/>	
 	<bean id="selectAllCommand" class="org.pmedv.blackboard.commands.SelectAllCommand"/>
 	<bean id="selectAllLinesCommand" class="org.pmedv.blackboard.commands.SelectAllLinesCommand"/>
 	<bean id="browseSheetsCommand" class="org.pmedv.blackboard.commands.BrowseSheetsCommand"/>

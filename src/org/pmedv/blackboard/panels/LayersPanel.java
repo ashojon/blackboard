@@ -47,6 +47,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import org.pmedv.blackboard.EditorUtils;
 import org.pmedv.blackboard.commands.DeleteLayerCommand;
+import org.pmedv.blackboard.commands.SelectAllLayersCommand;
 import org.pmedv.blackboard.commands.DuplicateLayerCommand;
 import org.pmedv.blackboard.commands.MoveLayerDownCommand;
 import org.pmedv.blackboard.commands.MoveLayerUpCommand;
@@ -104,6 +105,7 @@ public class LayersPanel extends JPanel {
 		popupMenu.add(AppContext.getContext().getBean(SetLayerColorCommand.class));
 		popupMenu.add(AppContext.getContext().getBean(DuplicateLayerCommand.class));
 		popupMenu.add(AppContext.getContext().getBean(DeleteLayerCommand.class));
+		popupMenu.add(AppContext.getContext().getBean(SelectAllLayersCommand.class));
 		
 		layerTable.addMouseListener(new MouseAdapter() {
 			
@@ -287,7 +289,7 @@ public class LayersPanel extends JPanel {
 		/**
 		 * Select the according layer
 		 */
-		
+		if(row >=0){
 		Layer layer = model.getLayer().get(row);		
 		currentLayerCombo.setSelectedItem(layer);
 		
@@ -301,6 +303,7 @@ public class LayersPanel extends JPanel {
 		
 		BoardEditor editor = EditorUtils.getCurrentActiveEditor();
 		editor.getModel().setCurrentLayer(layer);
+		}
 	}
 	
 	public AlternatingLineTable getLayerTable() {
